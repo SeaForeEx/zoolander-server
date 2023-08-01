@@ -1,0 +1,38 @@
+[
+  {
+      "model": "zoolanderapi.classroom",
+      "pk": 1,
+      "fields": {
+          "class_name": "Parry's Blue Eyed Mary",
+          "teacher_id": 1,
+          "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat."
+      }
+  },
+  {
+      "model": "zoolanderapi.classroom",
+      "pk": 2,
+      "fields": {
+          "class_name": "Low Frostweed",
+          "teacher_id": 2,
+          "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue."
+    }
+},
+  {
+      "model": "zoolanderapi.classroom",
+      "pk": 3,
+      "fields": {
+          "class_name": "Godfrey's Thoroughwort",
+          "teacher_id": 3,
+          "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. "
+      }
+  },
+  {
+      "model": "zoolanderapi.classroom",
+      "pk": 4,
+      "fields": {
+          "class_name": "Thurber's Cotton",
+          "teacher_id": 4,
+          "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo."
+      }
+  }
+]
