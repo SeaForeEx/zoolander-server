@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!&f*aafb^ac1jvtckk#+u8mn@)svnz4whzl0ojh-15@zfoi6ql'
+SECRET_KEY = 'django-insecure-h_bg-8qqp#-(s_j_^0n$48ih72)p8_@2%qmfp_81ewbl-3b^40'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'zoolanderapi',
 ]
 
-# THIS IS NEW
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000'
