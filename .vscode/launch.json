@@ -1,15 +1,16 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Request Handler",
+            "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "./request_handler.py",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/manage.py",
+            "args": ["runserver"],
+            "django": true,
+            "autoReload":{
+                "enable": true
+            }
         }
     ]
 }
