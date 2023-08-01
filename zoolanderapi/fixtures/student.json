@@ -1,0 +1,38 @@
+[
+  {
+      "model": "zoolanderapi.student",
+      "pk": 1,
+      "fields": {
+          "student_full_name": "Heloise Acres",
+          "age": 12,
+          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+      }
+  },
+  {
+      "model": "zoolanderapi.student",
+      "pk": 2,
+      "fields": {
+          "student_full_name": "Wolfie Goscomb",
+          "age": 12,
+          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+    }
+},
+  {
+      "model": "zoolanderapi.student",
+      "pk": 3,
+      "fields": {
+          "student_full_name": "Llewellyn Hindrich",
+          "age": 13,
+          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+      }
+  },
+  {
+      "model": "zoolanderapi.student",
+      "pk": 4,
+      "fields": {
+          "student_full_name": "Stanton Pendell",
+          "age": 14,
+          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+      }
+  }
+]
