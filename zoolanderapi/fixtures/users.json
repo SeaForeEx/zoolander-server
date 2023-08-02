@@ -1,0 +1,30 @@
+[
+  {
+      "model": "zoolanderapi.user",
+      "pk": 1,
+      "fields": {
+          "uid": "npRmwanmpSWflPd2RC07gMFEO9H2"
+      }
+  },
+  {
+      "model": "zoolanderapi.user",
+      "pk": 2,
+      "fields": {
+          "uid": "tRqQmd5uKbbXpWHXA9qB7RBNJjh2"
+    }
+},
+  {
+      "model": "zoolanderapi.user",
+      "pk": 3,
+      "fields": {
+          "uid": "usdAbaExdhN9PEDgAN38ZJqw0jT2"
+      }
+  },
+  {
+      "model": "zoolanderapi.user",
+      "pk": 4,
+      "fields": {
+          "uid": "Q6W5SKlVB0bkmI360mByb2nE3O03"
+      }
+  }
+]

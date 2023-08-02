@@ -7,3 +7,4 @@ class Assignment(models.Model):
     teacher_id = models.ForeignKey(User, on_delete=models.CASCADE)
     class_id = models.ForeignKey(Classroom, on_delete=models.CASCADE)
     content = models.CharField(max_length=500)
+    image_url = models.CharField(max_length=200)

@@ -1,2 +1,5 @@
-from .auth import register_user, check_user
-from .assignment import AssignmentView
+from .student_class import StudentClass
+from .classroom import Classroom
+from .student import Student
+from .user import User
+from .assignment import Assignment
