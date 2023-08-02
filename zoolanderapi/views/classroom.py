@@ -31,7 +31,7 @@ class ClassroomView(ViewSet):
         return Response(serializer.data)
     
     def update(self, request, pk):
-        classroom = classroom.objects.get(pk=pk)
+        classroom = Classroom.objects.get(pk=pk)
         teacher_id = User.objects.get(uid=request.data["teacherId"])
         classroom.teacher_id=teacher_id
         classroom.class_name = request.data["className"]
