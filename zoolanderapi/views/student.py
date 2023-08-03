@@ -33,7 +33,7 @@ class StudentView(ViewSet):
         return Response(serializer.data)
     
     def update(self, request, pk):
-        student = student.objects.get(pk=pk)
+        student = Student.objects.get(pk=pk)
         student.student_full_name = request.data["studentFullName"]
         student.age = request.data["age"]
         student.image_url = request.data["imageUrl"]
