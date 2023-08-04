@@ -15,6 +15,7 @@ class AssignmentView(ViewSet):
             teacher_id = teacher_id,
             class_id = class_id,
             content=request.data["content"],
+            title=request.data["title"],
         )
         serializer = AssignmentSerializer(assignment)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -38,6 +39,7 @@ class AssignmentView(ViewSet):
         
         assignment = Assignment.objects.get(pk=pk)
         assignment.content = request.data["content"]
+        assignment.content = request.data["title"]
         assignment.save()
         return Response('Assignment Updated', status=status.HTTP_200_OK)
       
@@ -53,5 +55,5 @@ class AssignmentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Assignment
-        fields = ('id', 'teacher_id', 'class_id', 'content')
+        fields = ('id', 'teacher_id', 'class_id', 'content', 'title')
     
