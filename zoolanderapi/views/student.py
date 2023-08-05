@@ -13,7 +13,7 @@ class StudentView(ViewSet):
         student = Student.objects.get(pk=pk)
         serializer = StudentSerializer(student)
         return Response(serializer.data)
-      except Classroom.DoesNotExist as ex: 
+      except Student.DoesNotExist as ex: 
         return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
     
     
