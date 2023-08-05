@@ -6,7 +6,8 @@
           "class_id": 1,
           "teacher_id": 1,
           "content": "Multi-channelled composite productivity",
-          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+          "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff",
+          "title": "Title 1"
       }
   },
   {
@@ -16,7 +17,8 @@
         "class_id": 2,
         "teacher_id": 2,
         "content": "Upgradable even-keeled strategy",
-        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff",
+        "title": "Title 2"
     }
 },
   {
@@ -26,7 +28,8 @@
         "class_id": 3,
         "teacher_id": 3,
         "content": "De-engineered foreground project",
-        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff",
+        "title": "Title 3"
       }
   },
   {
@@ -36,7 +39,8 @@
         "class_id": 4,
         "teacher_id": 4,
         "content": "Multi-layered homogeneous local area network",
-        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff"
+        "image_url": "http://dummyimage.com/115x100.png/cc0000/ffffff",
+        "title": "Title 4"
       }
   }
 ]
