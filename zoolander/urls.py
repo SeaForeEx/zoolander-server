@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from zoolanderapi.views import AssignmentView, ClassroomView, StudentView
+from zoolanderapi.views import AssignmentView, ClassroomView, StudentView, UserView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'assignments', AssignmentView, 'assignment')
 router.register(r'classrooms', ClassroomView, 'classroom')
 router.register(r'students', StudentView, 'student')
+router.register(r'users', UserView, 'user')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
