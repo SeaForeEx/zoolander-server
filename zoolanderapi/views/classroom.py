@@ -21,7 +21,7 @@ class ClassroomView(ViewSet):
       return Response(serializer.data)
     
     def create(self, request):
-        teacher_id = User.objects.get(pk=request.data["teacherId"])
+        teacher_id = User.objects.get(uid=request.data["teacherId"])
         classroom = Classroom.objects.create(
             teacher_id=teacher_id,
             class_name = request.data["className"],
@@ -32,7 +32,7 @@ class ClassroomView(ViewSet):
     
     def update(self, request, pk):
         classroom = Classroom.objects.get(pk=pk)
-        teacher_id = User.objects.get(id=request.data["teacherId"])
+        teacher_id = User.objects.get(uid=request.data["teacherId"])
         classroom.teacher_id=teacher_id
         classroom.class_name = request.data["className"]
         classroom.description = request.data["description"]

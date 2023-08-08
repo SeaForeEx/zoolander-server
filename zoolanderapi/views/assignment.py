@@ -9,7 +9,7 @@ class AssignmentView(ViewSet):
     
     def create(self, request):
         """POST Assignment"""
-        teacher_id = User.objects.get(pk=request.data["teacherId"])
+        teacher_id = User.objects.get(uid=request.data["teacherId"])
         class_id = Classroom.objects.get(pk=request.data["classId"])
         assignment = Assignment.objects.create(
             teacher_id = teacher_id,
@@ -56,4 +56,4 @@ class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assignment
         fields = ('id', 'teacher_id', 'class_id', 'content', 'title')
-    
+        depth = 1
