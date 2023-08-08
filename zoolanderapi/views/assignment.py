@@ -38,8 +38,10 @@ class AssignmentView(ViewSet):
         """PUT Assignment"""
         
         assignment = Assignment.objects.get(pk=pk)
+        class_id = Classroom.objects.get(pk=request.data["classId"])
+        assignment.class_id=class_id
         assignment.content = request.data["content"]
-        assignment.content = request.data["title"]
+        assignment.title = request.data["title"]
         assignment.save()
         return Response('Assignment Updated', status=status.HTTP_200_OK)
       
