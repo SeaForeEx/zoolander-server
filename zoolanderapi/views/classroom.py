@@ -7,21 +7,23 @@ from rest_framework.decorators import action
 class ClassroomView(ViewSet):
 
     def retrieve(self, request, pk):
-      try:
-        classroom = Classroom.objects.get(pk=pk)
-        serializer = ClassroomSerializer(classroom)
-        return Response(serializer.data)
-      except Classroom.DoesNotExist as ex: 
-        return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+        """Docstring"""
+        try:
+            classroom = Classroom.objects.get(pk=pk)
+            serializer = ClassroomSerializer(classroom)
+            return Response(serializer.data)
+        except Classroom.DoesNotExist as ex: 
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
     
     
     def list(self, request):
-      
-      classrooms = Classroom.objects.all()
-      serializer = ClassroomSerializer(classrooms, many=True)
-      return Response(serializer.data)
+        """Docstring"""
+        classrooms = Classroom.objects.all()
+        serializer = ClassroomSerializer(classrooms, many=True)
+        return Response(serializer.data)
     
     def create(self, request):
+        """Docstring"""
         teacher_id = User.objects.get(uid=request.data["teacherId"])
         classroom = Classroom.objects.create(
             teacher_id=teacher_id,
@@ -32,6 +34,7 @@ class ClassroomView(ViewSet):
         return Response(serializer.data)
     
     def update(self, request, pk):
+        """Docstring"""
         classroom = Classroom.objects.get(pk=pk)
         teacher_id = User.objects.get(uid=request.data["teacherId"])
         classroom.teacher_id=teacher_id
@@ -58,7 +61,7 @@ class ClassroomView(ViewSet):
 class StudentClassSerializer(serializers.ModelSerializer):
   class Meta: 
     model = StudentClass
-    fields = ('id', 'classroom_id', 'student_id')
+    fields = ('id', 'classroom', 'student')
     depth = 1
 
 class ClassroomSerializer(serializers.ModelSerializer):

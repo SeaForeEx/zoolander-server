@@ -8,6 +8,7 @@ from zoolanderapi.models import User
 class UserView(ViewSet):
   
   def retrieve(self,request,pk):
+    """Docstring"""
     try:
       user = User.objects.get(pk=pk)
       serializer = UserSerializer(user)
@@ -17,11 +18,13 @@ class UserView(ViewSet):
                       status=status.HTTP_404_NOT_FOUND)
       
   def list(self, request):
+    """Docstring"""
     users = User.objects.all()
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
   
 class UserSerializer(serializers.ModelSerializer):
+  """Docstring"""
   class Meta: 
     model = User
     fields = ('id', 'uid')
