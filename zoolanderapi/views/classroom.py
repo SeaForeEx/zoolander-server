@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from zoolanderapi.models import Classroom, User
+from zoolanderapi.models import Classroom, User, StudentClass
+from rest_framework.decorators import action
 
 class ClassroomView(ViewSet):
 
@@ -17,9 +18,7 @@ class ClassroomView(ViewSet):
     
     def list(self, request):
         """Docstring"""
-        uid = request.META['HTTP_AUTHORIZATION']
-        user = User.objects.get(uid=uid)
-        classrooms = Classroom.objects.filter(teacher_id=user)
+        classrooms = Classroom.objects.all()
         serializer = ClassroomSerializer(classrooms, many=True)
         return Response(serializer.data)
     
@@ -49,6 +48,21 @@ class ClassroomView(ViewSet):
         classroom = Classroom.objects.get(pk=pk)
         classroom.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+      
+    @action(methods=['get'], detail=True)
+    def get_students(self, request, pk):
+      try:
+        student_classes = StudentClass.objects.filter(classroom_id = pk)
+        serializer = StudentClassSerializer(student_classes, many=True)
+        return Response(serializer.data)
+      except StudentClass.DoesNotExist:
+        return Response(False)
+
+class StudentClassSerializer(serializers.ModelSerializer):
+  class Meta: 
+    model = StudentClass
+    fields = ('id', 'classroom', 'student')
+    depth = 1
 
 class ClassroomSerializer(serializers.ModelSerializer):
     class Meta:

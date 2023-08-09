@@ -50,8 +50,7 @@ class StudentView(ViewSet):
       
     @action(methods=['post'], detail=True)
     def addtoclass(self, request, pk):
-        """Docstring"""
-        classroom = Classroom.objects.get(pk=request.data["classId"])
+        classroom = Classroom.objects.get(pk=request.data["classroomId"])
         student = Student.objects.get(pk=pk)
         added = StudentClass.objects.create(
             classroom=classroom,
@@ -75,3 +74,4 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = ('id', 'student_full_name', 'age', 'image_url')
+        depth = 1
