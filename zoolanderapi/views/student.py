@@ -7,7 +7,7 @@ from zoolanderapi.models import Classroom, User, Student, StudentClass
 from rest_framework.decorators import action
 
 class StudentView(ViewSet):
-
+    """Docstring"""
     def retrieve(self, request, pk):
       try:
         student = Student.objects.get(pk=pk)
@@ -18,12 +18,13 @@ class StudentView(ViewSet):
     
     
     def list(self, request):
-      
+      """Docstring"""
       students = Student.objects.all()
       serializer = StudentSerializer(students, many=True)
       return Response(serializer.data)
     
     def create(self, request):
+        """Docstring"""
         student = Student.objects.create(
             student_full_name = request.data["studentFullName"],
             age = request.data["age"],
@@ -33,6 +34,7 @@ class StudentView(ViewSet):
         return Response(serializer.data)
     
     def update(self, request, pk):
+        """Docstring"""
         student = Student.objects.get(pk=pk)
         student.student_full_name = request.data["studentFullName"]
         student.age = request.data["age"]
@@ -41,13 +43,14 @@ class StudentView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
     
     def destroy(self, request, pk):
-        
+        """Docstring"""
         classroom = Student.objects.get(pk=pk)
         classroom.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
       
     @action(methods=['post'], detail=True)
     def addtoclass(self, request, pk):
+        """Docstring"""
         classroom = Classroom.objects.get(pk=request.data["classId"])
         student = Student.objects.get(pk=pk)
         added = StudentClass.objects.create(
@@ -58,6 +61,7 @@ class StudentView(ViewSet):
     
     @action(methods=['delete'], detail=True)
     def remove(self, request, pk):
+        """Docstring"""
         classroom = Classroom.objects.get(pk=request.data["classroomId"])
         student = Student.objects.get(pk=pk)
         student_class = StudentClass.objects.get(
