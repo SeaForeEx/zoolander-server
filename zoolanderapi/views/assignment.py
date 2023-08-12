@@ -30,8 +30,11 @@ class AssignmentView(ViewSet):
     def list(self, request):
         """GET All Assignments"""
         
-        assignment = Assignment.objects.all()
-        serializer = AssignmentSerializer(assignment, many=True)
+        assignments = Assignment.objects.all()
+        class_id = request.query_params.get('classId', None)
+        if class_id is not None:
+            assignments = assignments.filter(class_id=class_id)
+        serializer = AssignmentSerializer(assignments, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
       
     def update(self, request, pk):
