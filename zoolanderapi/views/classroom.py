@@ -42,21 +42,22 @@ class ClassroomView(ViewSet):
         classroom.description = request.data["description"]
         classroom.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-    
+       
     def destroy(self, request, pk):
-        
+        """Docstring"""
         classroom = Classroom.objects.get(pk=pk)
         classroom.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
       
     @action(methods=['get'], detail=True)
     def get_students(self, request, pk):
-      try:
-        student_classes = StudentClass.objects.filter(classroom_id = pk)
-        serializer = StudentClassSerializer(student_classes, many=True)
-        return Response(serializer.data)
-      except StudentClass.DoesNotExist:
-        return Response(False)
+        """Docstring"""
+        try:
+            student_classes = StudentClass.objects.filter(classroom_id = pk)
+            serializer = StudentClassSerializer(student_classes, many=True)
+            return Response(serializer.data)
+        except StudentClass.DoesNotExist:
+            return Response(False)
 
 class StudentClassSerializer(serializers.ModelSerializer):
   class Meta: 
